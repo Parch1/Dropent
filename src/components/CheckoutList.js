@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
   checkout: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    margin: 20
   }
 }));
 

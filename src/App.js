@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Checkout from './components/Checkout';
+import CheckoutList from './components/CheckoutList';
 
 class App extends Component {
   constructor(props) {
@@ -26,12 +26,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+          
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="name">Enter your name: </label>
             <input
@@ -42,16 +42,11 @@ class App extends Component {
             />
             <button type="submit">Submit</button>
           </form>
-          <p>{this.state.greeting}</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+          <CheckoutList></CheckoutList>
+          <Checkout></Checkout>
+
+
       </div>
     );
   }

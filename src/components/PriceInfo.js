@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
 
 class PriceInfo extends Component {
   constructor(props) {
@@ -14,32 +13,11 @@ class PriceInfo extends Component {
 
 
   render() {
-    const flexContainer = {
-        display: 'flex',
-        flexDirection: 'row',
-        padding: 0,
-      };
-      
     return (
       <div className="Items">
         <header className="item-list">
-        <List component="nav" className="items" aria-label="items">
-        <ListItem button>
-            <ListItemText inset primary="Item 1" />
-        </ListItem>
-        <ListItem button>
-            <ListItemText inset primary="Item 2" />
-        </ListItem>
-        <ListItem button>
-        <ListItemText inset primary="Item 3" />
-        </ListItem>
-        <ListItem button>
-        <ListItemText inset primary="Item 4" />
-        </ListItem>
-        <ListItem button>
-        <ListItemText inset primary="Item 5" />
-        </ListItem>
-        </List>
+            <img src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"></img>
+
         </header>
       </div>
     );

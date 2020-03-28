@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Checkout from './components/Checkout';
 import CheckoutList from './components/CheckoutList';
 import PriceInfo from './components/PriceInfo';
 
@@ -27,17 +26,17 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
-          <PriceInfo></PriceInfo>
-          <CheckoutList></CheckoutList>
-          <Checkout></Checkout>
-
-
+      <div>
+        <PriceInfo></PriceInfo>
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+        <CheckoutList></CheckoutList>
+        </div>
       </div>
+
     );
   }
 }

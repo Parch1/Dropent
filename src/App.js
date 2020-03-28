@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CheckoutList from './components/CheckoutList';
-import PriceInfo from './components/PriceInfo';
+import BackgroundLeaf from './components/BackgroundLeaf';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PriceInfo></PriceInfo>
+        <BackgroundLeaf></BackgroundLeaf>
         <div style={{
           display: "flex",
           justifyContent: "center",

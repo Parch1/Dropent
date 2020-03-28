@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PriceInfo extends Component {
+class BackgroundLeaf extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class PriceInfo extends Component {
     return (
       <div className="Items">
         <header className="item-list">
-            <img src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"></img>
+            <img src={ require('../images/leaf.png') }></img>
 
         </header>
       </div>
@@ -24,4 +24,4 @@ class PriceInfo extends Component {
   }
 }
 
-export default PriceInfo;
+export default BackgroundLeaf;

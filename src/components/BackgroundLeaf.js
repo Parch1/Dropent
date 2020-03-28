@@ -14,7 +14,7 @@ class BackgroundLeaf extends Component {
 
   render() {
     return (
-      <div className="Items">
+      <div className="Leaf">
         <header className="item-list">
             <img src={ require('../images/leaf.png') }></img>
 

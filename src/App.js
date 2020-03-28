@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CheckoutList from './components/CheckoutList';
 import BackgroundLeaf from './components/BackgroundLeaf';
+import Header from './components/Header';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div       style={{
+        backgroundColor: '#E2EBEB',
+      }}>
+        <Header></Header>
         <BackgroundLeaf></BackgroundLeaf>
         <div style={{
           display: "flex",

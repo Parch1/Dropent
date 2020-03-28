@@ -11,7 +11,6 @@ export default class Checkout extends React.Component {
 
    return (
     <div>
-
       <StripeCheckout className="stripe-button-el"
         stripeKey={process.env.STRIPE_PK_KEY}
         token={this.onToken}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Checkout from './components/Checkout';
 import CheckoutList from './components/CheckoutList';
+import PriceInfo from './components/PriceInfo';
 
 class App extends Component {
   constructor(props) {
@@ -31,18 +32,7 @@ class App extends Component {
         justifyContent: "center",
         alignItems: "center"
       }}>
-          
-          <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Enter your name: </label>
-            <input
-              id="name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            <button type="submit">Submit</button>
-          </form>
-
+          <PriceInfo></PriceInfo>
           <CheckoutList></CheckoutList>
           <Checkout></Checkout>
 

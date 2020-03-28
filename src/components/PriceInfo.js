@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 
-class CheckoutList extends Component {
+class PriceInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ class CheckoutList extends Component {
     return (
       <div className="Items">
         <header className="item-list">
-        <List component="nav" className="items" aria-label="items" style={flexContainer}>
+        <List component="nav" className="items" aria-label="items">
         <ListItem button>
             <ListItemText inset primary="Item 1" />
         </ListItem>
@@ -46,4 +46,4 @@ class CheckoutList extends Component {
   }
 }
 
-export default CheckoutList;
+export default PriceInfo;

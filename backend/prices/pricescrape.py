@@ -1,37 +1,38 @@
-import requests
+# Run with python 2
+
+# Source: https://hackernoon.com/how-to-scrape-google-with-python-bo7d2tal
+
 from bs4 import BeautifulSoup
-import csv
-# Collect the github page
-page =requests.get('https://www.google.com/search?q=toilet+paper&sa=X&rlz=1C1CHBF_enHK741HK741&biw=1024&bih=1000&tbm=shop&sxsrf=ALeKk03uOGDeF6NxIGWlzgwOIYodcxuwKA:1585511990984&tbs=p_ord:p&ei=Nv6AXojQO-mQggeFhJvgAg&ved=0ahUKEwiIw4m4vMDoAhVpiOAKHQXCBiwQuw0I8gIoAgg')
-#print(page)
-# Create a BeautifulSoup object
-soup = BeautifulSoup(page.text, 'html.parser')
-#print(soup)
-# get the repo list
-repo = soup.find(class_="sh-pr__product-results")
-#print(repo)
-# find all instances of that class (should return 25 as shown in the github main page)
-repo_list = repo.find_all(class_='sh-dlr__list-result')
+import requests
+import webbrowser
 
-print(len(repo_list))
+query = "bread"
+query = query.replace(' ', '+')
+url = "https://google.com/search?q=" + query + '&source=lnms&tbm=shop&start=0'
 
-# Open writer with name
-file_name = "github_trending_today.csv"
-# set newline to be ‘' so that that new rows are appended without skipping any
-f = csv.writer(open(file_name, 'w', newline=''))
-# write a new row as a header
-f.writerow(['Developer', 'Repo Name', 'Number of Stars'])
-for repo in repo_list:
-# find the first <a> tag and get the text. Split the text using ‘/' to get an array with developer name and repo name
-	full_repo_name = repo.find('h1').find('a').text.split('/')
-# extract the developer name at index 0
-	developer = full_repo_name[0].strip()
-# extract the repo name at index 1
-	repo_name = full_repo_name[1].strip()
-# find the first occurance of class octicon octicon-star and get the text from the parent (which is the number of stars)
-	stars = repo.find(class_='octicon octicon-star').parent.parent.text.strip()
-# strip() all to remove leading and traling white spaces
-	print('developer', developer)
-	print('name', repo_name)
-	print('stars', stars)
-	f.writerow([developer, repo_name, stars])
+# "https://www.google.com/search?q=banana&sxsrf=ALeKk01OingE0MkDQki3KJNc6Bc3i9wReg:1585517218164&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjOrcv0z8DoAhVVmnIEHYDcDbsQ_AUoA3oECBcQBQ&biw=834&bih=971"
+
+# desktop user-agent
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
+headers = {"user-agent" : USER_AGENT}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+	soup = BeautifulSoup(response.content, "html.parser")
+
+	results = []
+	for g in soup.find_all('div', class_='sh-dlr__content'):
+		anchors = g.find_all('a')
+		if anchors:
+			title = g.find('h3').text
+			link = anchors[0]['href']
+			price = g.find('span', class_="Nr22bf").text
+			item = {
+			"title": title,
+			"price": price,
+			"link": link
+			}
+			results.append(item)
+
+	print(results)

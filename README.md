@@ -10,7 +10,7 @@ Visualize aggregate prices of high demand goods (toilet paper, hand sanitizer, e
 
 ### Contributors
 
-Project developed by Ryan Lee (ryanlee7132@gmail.com), Jennifer Long (j.alicia.long@gmail.com), Christian Gonzalez, and Peijia Ding for HooHacks 2020.
+Project developed by Ryan Lee, Jennifer Long, Christian Gonzalez, and Peijia Ding for HooHacks 2020.
 
 
 ## Instructions
@@ -44,6 +44,6 @@ You can check the result of your api call at http://localhost:3001 after running
 
 * [ReactJS](https://www.djangoproject.com/) - Frontend
 * [React-Bootstrap](https://react-bootstrap.github.io/components/) - For UI components
-* [ExpressJS/NodeJS](https://expressjs.com/) - Backend APIs
+* [Django REST Framework](https://www.django-rest-framework.org/) - Backend API
 * [Firebase](https://firebase.google.com/) - Database
 * [Google Cloud Platform](https://cloud.google.com/) - Deployment

@@ -7,6 +7,7 @@ serpwow = GoogleSearchResults("API_KEY_HERE")
 # set up a dict for the search parameters
 params = {
   "q" : "pizza"
+  "search_type" : "shopping"
 }
 
 # retrieve the search results as JSON

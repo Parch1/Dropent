@@ -21,7 +21,7 @@ class Navigation extends Component {
   render() {
     return (
         <Navbar collapseOnSelect bg="light" variant="light" expand="sm">
-          <Navbar.Brand href="/Home">
+          <Navbar.Brand href="/">
             <img
               src={require("../images/logo.png")}
               width="60"
@@ -37,7 +37,10 @@ class Navigation extends Component {
                 <Nav.Link href="/saved">My Saved Items</Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-2">
-                <Nav.Link href="/">Shop</Nav.Link>
+                <Nav.Link href="/shop">Shop</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="mx-2">
+                <Nav.Link href="/donate">Donate</Nav.Link>
               </Nav.Item>
             </Nav>
             <Nav>

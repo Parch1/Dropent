@@ -74,12 +74,11 @@ export default function Header() {
     var status = setStatus();
 
    return (
-
-       <div>
-
-        <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
+     <div>
         <p style={{margin: 30, float: 'left'}}>
-          <b>Dropent:</b> Shop for your essential goods and watch the prices drop.
+          <h4>
+            Shop for your essential goods and watch the prices drop.
+          </h4>
         </p>
 
         <div style={{margin: 20, float: 'right'}}>
@@ -93,7 +92,6 @@ export default function Header() {
           />
           </form>
         </div>
-
-       </div>
+      </div>
    )
 }

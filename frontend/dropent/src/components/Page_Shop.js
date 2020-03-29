@@ -4,11 +4,16 @@ import BackgroundLeaf from './BackgroundLeaf';
 import PriceInfo from './PriceInfo';
 import Header from './Header';
 import Rectangle from 'react-rectangle';
+
+// For Layout
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import SearchStatus from './SearchStatus';
 import searchStatus from './Search';
 
 console.log(searchStatus);
-
 
 class Shop extends Component {
   constructor(props) {
@@ -33,31 +38,38 @@ class Shop extends Component {
 
   render() {
     return (
-      <div style={{backgroundColor: '#E2EBEB'}}>
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col sm="12">
+            <div onClick={this.handleChange}>
+              <Header></Header>
+            </div>
+            <div tabindex="0">
+              <SearchStatus userStatus={this.state.searched}></SearchStatus>
+              {this.state.searched && <PriceInfo></PriceInfo>}
+              {!this.state.searched && <BackgroundLeaf></BackgroundLeaf>}
+            </div>
 
-        <div style={{marginLeft:'630px', marginBottom:'-430px', marginTop:'-100px'}} tabindex="0">
-          <SearchStatus userStatus={this.state.searched}></SearchStatus>
-          {this.state.searched && <PriceInfo></PriceInfo>}
-          {!this.state.searched && <BackgroundLeaf></BackgroundLeaf>}
-        </div>
+          </Col>
+        </Row>
 
-        <div onClick={this.handleChange}>
-          <Header style={{position: 'absolute', marginTop:'-100px'}}></Header>
-        </div>
+        <Row className="justify-content-md-center">
+          <Col md="12">
+            <Rectangle aspectRatio={[100, 1]}>
+              <div style={{ background: '#DBDFE1', width: '100%', height: '100%', align:'left' }} />
+            </Rectangle>
 
-        <Rectangle aspectRatio={[100, 1]} style={{marginTop:'550px'}}>
-          <div style={{ background: '#DBDFE1', width: '100%', height: '100%', align:'left' }} />
-        </Rectangle>
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}>
+              <CheckoutList></CheckoutList>
+            </div>
+          </Col>
+        </Row>
 
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-        }}>
-          <CheckoutList></CheckoutList>
-        </div>
-
-      </div>
+      </Container>
     );
   }
 }

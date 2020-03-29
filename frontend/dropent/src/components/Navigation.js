@@ -1,15 +1,14 @@
-import React from "react";
+import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
-class Navigation extends React.Component {
+class Navigation extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
-      userId: "",
+      name: "User",
     };
   }
 
@@ -21,30 +20,27 @@ class Navigation extends React.Component {
 
   render() {
     return (
-        <Navbar collapseOnSelect bg="dark" variant="dark" expand="sm">
+        <Navbar collapseOnSelect bg="light" variant="light" expand="sm">
           <Navbar.Brand href="/Home">
             <img
-              src={require("./logo.png")}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
+              src={require("../images/logo.png")}
+              width="60"
+              height="60"
+              className="d-inline-block align-middle"
             />
-            {" Course Star"}
+            {" DROPENT"}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto mx-2">
               <Nav.Item className="mx-2">
-                <Nav.Link href="/MyCourses">My Courses</Nav.Link>
+                <Nav.Link href="/">My Items</Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-2">
-                <Nav.Link href="/Search">Search</Nav.Link>
+                <Nav.Link href="/">Shop</Nav.Link>
               </Nav.Item>
             </Nav>
             <Nav>
-              <Navbar.Text className="text-center mx-4 mt-1">
-                {this.state.userId}
-              </Navbar.Text>
               <NavDropdown
                 className="justify-content-end"
                 title={this.state.name}
@@ -53,7 +49,7 @@ class Navigation extends React.Component {
               >
                 <NavDropdown.Item href="/Account">Account</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/Login" onClick={this.logout}>
+                <NavDropdown.Item href="/Login">
                   Logout
                 </NavDropdown.Item>
               </NavDropdown>

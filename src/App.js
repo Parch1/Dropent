@@ -42,7 +42,9 @@ class App extends Component {
           justifyContent: "center",
           alignItems: "center"
         }}>
-        <CheckoutList></CheckoutList>
+        <CheckoutList>
+
+        </CheckoutList>
         </div>
       </div>
 

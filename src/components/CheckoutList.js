@@ -5,6 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import Checkout from './Checkout';
+import box from '../images/box-only.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,12 +13,13 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: '#E2EBEB'
+    backgroundColor: '#F2F3F4'
   },
   gridList: {
     flexWrap: 'nowrap',
     transform: 'translateZ(0)',
-    width: '1000px'
+    width: '1400px',
+    height: '250px'
   },
   title: {
     color: theme.palette.primary.light,
@@ -30,7 +32,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    margin: 20
+    margin: 20,
+    align:'center',
+    marginTop:'-100px'
   }
 }));
 
@@ -64,28 +68,16 @@ export default function CheckoutList() {
   return (
       <div>
         <div className={classes.root}>
-        <GridList className={classes.gridList} cols={5.5}>
+        <p style={{marginTop:'20px', marginRight:'1225px'}}>Items saved</p>
+
+        <GridList className={classes.gridList} cols={5}>
             {tileData.map(tile => (
-            <GridListTile key={tile.img}>
-                <img src={tile.img} alt={tile.title} />
-                <GridListTileBar
-                title={tile.title}
-                classes={{
-                    root: classes.titleBar,
-                    title: classes.title,
-                }}
-                actionIcon={
-                    <IconButton aria-label={`star ${tile.title}`}>
-                    </IconButton>
-                }
-                />
-            </GridListTile>
+                <img src={box} alt={tile.title} style={{height:"100px", width:"150px", marginLeft:'40px', marginTop:'0px'}}/>
             ))}
         </GridList>
-        </div>
-
         <div className={classes.checkout}>
             <Checkout></Checkout>
+        </div>
         </div>
 
     </div>

@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "google-search-results-serpwow": "0.0.12",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.9.0",

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Row from 'react-bootstrap/Row';
+
 class PriceInfo extends Component {
   constructor(props) {
     super(props);
@@ -14,9 +16,11 @@ class PriceInfo extends Component {
 
   render() {
     return (
-      <div className="Leaf">
-            <img src={ require('../images/leaf.gif') } style={{marginTop:'40px'}}></img>
-      </div>
+      <Row className="justify-content-md-center">
+        <div className="Leaf">
+              <img src={ require('../images/leaf.gif') } style={{marginTop:'40px'}}></img>
+        </div>
+      </Row>
     );
   }
 }

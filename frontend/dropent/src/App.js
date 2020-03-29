@@ -4,12 +4,13 @@ import BackgroundLeaf from './components/BackgroundLeaf';
 import PriceInfo from './components/PriceInfo';
 import Header from './components/Header';
 import Rectangle from 'react-rectangle';
+import searchStatus from './Search.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search:false
+      searched:false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,12 +28,12 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div style={{
         backgroundColor: '#E2EBEB'}}>
-        <div style={{marginLeft:'630px', marginBottom:'-430px', marginTop:'-100px'}}>
-        {this.state.search && <PriceInfo></PriceInfo> || !this.state.search && <BackgroundLeaf></BackgroundLeaf>}
+        <div style={{marginLeft:'630px', marginBottom:'-430px', marginTop:'-100px'}} tabindex="0">
+      {searchStatus&& <PriceInfo></PriceInfo>}
+      {!searchStatus && <BackgroundLeaf></BackgroundLeaf>}
 
           </div>
           <Header style={{position: 'absolute', marginTop:'-100px'}}></Header>

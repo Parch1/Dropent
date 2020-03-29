@@ -1,8 +1,9 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import { TextField, FormControl, Form, Button } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
+import searchStatus, { setStatus } from '../Search.js';
 
-var search = false;
+console.log(searchStatus);
 
 const CssTextField = withStyles({
     root: {
@@ -37,26 +38,58 @@ const CssTextField = withStyles({
     },
   }));
 
-export default function Header() {
+export class HeaderInfo {
+    constructor(props) {
+      this.state = {
+        searched:false,
+        item:''
+      };
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
+
+    handleChange = (e) => {
+      e.preventDefault()
+      this.search = true;
+      this.item = e.target.value;
+      console.log(this.item);
+    };
+
+    handleSubmit(e){
+      //submit to API
+    };
+
+    render() {
+      return (
+        <div></div>
+      );
+    }
+  }
+
+export default function Header() {
     const classes = useStyles();
+    var info = new HeaderInfo();
+    var status = setStatus();
 
    return (
        
        <div>
-            <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
-           <p style={{margin: 30, float: 'left'}}><b>Dropent:</b> Search for an item and find the lowest price.</p>
+        <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
+        <p style={{margin: 30, float: 'left'}}><b>Dropent:</b> Search for an item and find the lowest price.</p>
         <div style={{margin: 20, float: 'right'}}>
-            <form className={classes.root} noValidate>
+            <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
                 <CssTextField
                 label="Search"
                 variant="outlined"
                 id="custom-css-outlined-input"
                 className={classes.margin}
+                onChange={status}
             />
             </form>
 
-            </div>
+        </div>
        </div>
    )
 }
+

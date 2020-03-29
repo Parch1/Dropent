@@ -15,7 +15,8 @@ class SearchStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userStatus:searchStatus
+      userStatus:searchStatus,
+      query:null
     };
   }
 

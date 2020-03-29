@@ -59,7 +59,8 @@ export class HeaderInfo {
       e.preventDefault()
       this.search = true;
       this.item = e.target.value;
-      console.log(this.item );
+      var item = setItem(this.item);
+      console.log(item);
     };
 
     handleSubmit(e){

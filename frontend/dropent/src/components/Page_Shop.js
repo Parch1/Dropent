@@ -19,7 +19,8 @@ class Shop extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searched:false
+      searched:false,
+      query:null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,7 +46,8 @@ class Shop extends Component {
               <ShopHeader></ShopHeader>
             </div>
             <div tabindex="0">
-              <SearchStatus userStatus={this.state.searched}></SearchStatus>
+              <SearchStatus userStatus={this.state.searched} query={this.state.query}></SearchStatus>
+              {!this.state.searched && <p onLoad={this.handleSearch}></p>}
               {!this.state.searched && <PriceInfo></PriceInfo>}
               {this.state.searched && <BackgroundLeaf></BackgroundLeaf>}
             </div>

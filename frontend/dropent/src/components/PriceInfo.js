@@ -14,7 +14,7 @@ class PriceInfo extends Component {
 
   render() {
     return (
-      <div className="Leaf" style={{}} >
+      <div className="Leaf">
             <img src={ require('../images/leaf.gif') } style={{marginTop:'40px'}}></img>
       </div>
     );

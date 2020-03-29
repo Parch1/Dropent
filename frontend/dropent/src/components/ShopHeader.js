@@ -1,6 +1,12 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
+
+// For Layout
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import { searchStatus, setStatus, setItem } from './Search.js';
 
 console.log(searchStatus);
@@ -74,24 +80,44 @@ export default function Header() {
     var status = setStatus();
 
    return (
-     <div>
-        <p style={{margin: 30, float: 'left'}}>
-          <h4>
-            Shop for your essential goods and watch the prices drop.
-          </h4>
-        </p>
+     <Row className="pt-4">
+       <Col lg="8">
+         <h4>
+           Shop for your essential goods and watch the prices drop.
+         </h4>
+       </Col>
+       <Col lg="4">
+         <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
+             <CssTextField
+             label="Search"
+             variant="outlined"
+             id="custom-css-outlined-input"
+             className={classes.margin}
+             onChange={info.handleChange}
+         />
+         </form>
+       </Col>
+     </Row>
 
-        <div style={{margin: 20, float: 'right'}}>
-          <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
-              <CssTextField
-              label="Search"
-              variant="outlined"
-              id="custom-css-outlined-input"
-              className={classes.margin}
-              onChange={info.handleChange}
-          />
-          </form>
-        </div>
-      </div>
    )
 }
+
+// <div>
+//    <p style={{margin: 30, float: 'left'}}>
+//      <h4>
+//        Shop for your essential goods and watch the prices drop.
+//      </h4>
+//    </p>
+//
+//    <div style={{margin: 20, float: 'right'}}>
+//      <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
+//          <CssTextField
+//          label="Search"
+//          variant="outlined"
+//          id="custom-css-outlined-input"
+//          className={classes.margin}
+//          onChange={info.handleChange}
+//      />
+//      </form>
+//    </div>
+//  </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CheckoutList from './CheckoutList';
 import BackgroundLeaf from './BackgroundLeaf';
 import PriceInfo from './PriceInfo';
-import Header from './Header';
+import ShopHeader from './ShopHeader';
 import Rectangle from 'react-rectangle';
 
 // For Layout
@@ -42,7 +42,7 @@ class Shop extends Component {
         <Row className="justify-content-md-center">
           <Col sm="12">
             <div onClick={this.handleChange}>
-              <Header></Header>
+              <ShopHeader></ShopHeader>
             </div>
             <div tabindex="0">
               <SearchStatus userStatus={this.state.searched}></SearchStatus>
@@ -59,13 +59,7 @@ class Shop extends Component {
               <div style={{ background: '#DBDFE1', width: '100%', height: '100%', align:'left' }} />
             </Rectangle>
 
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}>
-              <CheckoutList></CheckoutList>
-            </div>
+            <CheckoutList></CheckoutList>
           </Col>
         </Row>
 

@@ -41,7 +41,7 @@ class Alerts extends React.Component {
   render() {
     return (
       <Container>
-        <Row className="justify-content-md-center">
+        <Row className="py-4 justify-content-md-center">
           <Col md="4">
             <h2>My Saved Items</h2>
           </Col>

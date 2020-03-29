@@ -101,23 +101,3 @@ export default function Header() {
 
    )
 }
-
-// <div>
-//    <p style={{margin: 30, float: 'left'}}>
-//      <h4>
-//        Shop for your essential goods and watch the prices drop.
-//      </h4>
-//    </p>
-//
-//    <div style={{margin: 20, float: 'right'}}>
-//      <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
-//          <CssTextField
-//          label="Search"
-//          variant="outlined"
-//          id="custom-css-outlined-input"
-//          className={classes.margin}
-//          onChange={info.handleChange}
-//      />
-//      </form>
-//    </div>
-//  </div>

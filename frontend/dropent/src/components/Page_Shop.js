@@ -40,7 +40,7 @@ class Shop extends Component {
     return (
       <Container>
         <Row className="justify-content-md-center">
-          <Col sm="12">
+          <Col>
             <div onClick={this.handleChange}>
               <ShopHeader></ShopHeader>
             </div>
@@ -54,7 +54,7 @@ class Shop extends Component {
         </Row>
 
         <Row className="justify-content-md-center">
-          <Col md="12">
+          <Col>
             <Rectangle aspectRatio={[100, 1]}>
               <div style={{ background: '#DBDFE1', width: '100%', height: '100%', align:'left' }} />
             </Rectangle>

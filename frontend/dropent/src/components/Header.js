@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
-import searchStatus, { setStatus } from '../Search.js';
+import { searchStatus, setStatus, setItem } from '../Search.js';
 
 console.log(searchStatus);
 
@@ -42,7 +42,7 @@ export class HeaderInfo {
     constructor(props) {
       this.state = {
         searched:false,
-        item:''
+        item:null
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,11 +53,12 @@ export class HeaderInfo {
       e.preventDefault()
       this.search = true;
       this.item = e.target.value;
-      console.log(this.item);
+      console.log(this.item );
     };
 
     handleSubmit(e){
-      //submit to API
+      var item = setItem(this.item);
+      console.log("product: " + item);
     };
 
     render() {
@@ -84,7 +85,7 @@ export default function Header() {
                 variant="outlined"
                 id="custom-css-outlined-input"
                 className={classes.margin}
-                onChange={status}
+                onChange={info.handleChange}
             />
             </form>
 

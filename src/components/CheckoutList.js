@@ -12,12 +12,12 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#E2EBEB'
   },
   gridList: {
     flexWrap: 'nowrap',
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
+    width: '1000px'
   },
   title: {
     color: theme.palette.primary.light,
@@ -33,10 +33,6 @@ const useStyles = makeStyles(theme => ({
     margin: 20
   }
 }));
-
-
- //import image from 'path/to/image.jpg';
-
 
  const tileData = [
     {
@@ -66,9 +62,9 @@ export default function CheckoutList() {
   const classes = useStyles();
 
   return (
-    <div>
+      <div>
         <div className={classes.root}>
-        <GridList className={classes.gridList} cols={2.5}>
+        <GridList className={classes.gridList} cols={5.5}>
             {tileData.map(tile => (
             <GridListTile key={tile.img}>
                 <img src={tile.img} alt={tile.title} />

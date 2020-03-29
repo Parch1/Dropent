@@ -14,11 +14,9 @@ class BackgroundLeaf extends Component {
 
   render() {
     return (
-      <div className="Leaf" style={{align:'right'}}>
-        <header className="item-list">
-            <img src={ require('../images/leaf.png') }></img>
-
-        </header>
+      <div className="Leaf" style={{}} >
+            <img src={ require('../images/leaf.png') } style={{}}></img>
+            <img src={ require('../images/drop.png') } style={{align:'center'}}></img>
       </div>
     );
   }

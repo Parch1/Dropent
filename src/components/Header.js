@@ -1,8 +1,8 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { TextField, FormControl, Form, Button } from '@material-ui/core';
-import { Navbar, Nav } from 'reactstrap';
 
+var search = false;
 
 const CssTextField = withStyles({
     root: {
@@ -42,7 +42,9 @@ export default function Header() {
     const classes = useStyles();
 
    return (
+       
        <div>
+            <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
            <p style={{margin: 20, float: 'left'}}><b>Dropent:</b> Search for an item and find the lowest price.</p>
         <div style={{margin: 20, float: 'right'}}>
             <form className={classes.root} noValidate>
@@ -53,6 +55,7 @@ export default function Header() {
                 className={classes.margin}
             />
             </form>
+
             </div>
        </div>
    )

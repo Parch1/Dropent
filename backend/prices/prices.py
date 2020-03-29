@@ -2,11 +2,11 @@ from serpwow.google_search_results import GoogleSearchResults
 import json
 
 # create the serpwow object, passing in our API key
-serpwow = GoogleSearchResults("API_KEY_HERE")
+serpwow = GoogleSearchResults("39090B209642482C853B4B26EBF3127B")
 
 # set up a dict for the search parameters
 params = {
-  "q" : "pizza"
+  "q" : "bread",
   "search_type" : "shopping"
 }
 
@@ -14,4 +14,4 @@ params = {
 result = serpwow.get_json(params)
 
 # pretty-print the result
-print(json.dumps(result, indent=2, sort_keys=True)
+print(json.dumps(result, indent=2, sort_keys=True))

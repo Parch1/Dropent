@@ -8,8 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      greeting: ''
+      search:false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,15 +26,15 @@ class App extends Component {
   }
 
   render() {
+
     return (
-      <div       style={{
-        backgroundColor: '#E2EBEB',
-      }}>
-        <Header></Header>
-        <div>
+      <div style={{
+        backgroundColor: '#E2EBEB'}}>
+        <div style={{marginLeft:'630px', marginBottom:'-430px', marginTop:'-100px'}}>
         <BackgroundLeaf></BackgroundLeaf>
           </div>
-        <Rectangle aspectRatio={[100, 1]}>
+          <Header style={{position: 'absolute', marginTop:'-100px'}}></Header>
+        <Rectangle aspectRatio={[100, 1]} style={{marginTop:'550px'}}>
       <div style={{ background: '#DBDFE1', width: '100%', height: '100%', align:'left' }} />
     </Rectangle>
         <div style={{
@@ -46,6 +45,7 @@ class App extends Component {
         <CheckoutList></CheckoutList>
         </div>
       </div>
+
 
     );
   }

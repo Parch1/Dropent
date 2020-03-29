@@ -4,8 +4,10 @@ import BackgroundLeaf from './components/BackgroundLeaf';
 import PriceInfo from './components/PriceInfo';
 import Header from './components/Header';
 import Rectangle from 'react-rectangle';
-import searchStatus from './Search.js';
+import SearchStatus from './SearchStatus';
+import searchStatus from './Search';
 
+console.log(searchStatus);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,7 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ searched: true });
   }
 
   handleSubmit(event) {
@@ -32,11 +34,14 @@ class App extends Component {
       <div style={{
         backgroundColor: '#E2EBEB'}}>
         <div style={{marginLeft:'630px', marginBottom:'-430px', marginTop:'-100px'}} tabindex="0">
-      {searchStatus&& <PriceInfo></PriceInfo>}
-      {!searchStatus && <BackgroundLeaf></BackgroundLeaf>}
+          <SearchStatus userStatus={this.state.searched}></SearchStatus>
+      {this.state.searched && <PriceInfo></PriceInfo>}
+      {!this.state.searched && <BackgroundLeaf></BackgroundLeaf>}
 
           </div>
+          <div onClick={this.handleChange}>
           <Header style={{position: 'absolute', marginTop:'-100px'}}></Header>
+          </div>
         <Rectangle aspectRatio={[100, 1]} style={{marginTop:'550px'}}>
       <div style={{ background: '#DBDFE1', width: '100%', height: '100%', align:'left' }} />
     </Rectangle>

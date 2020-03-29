@@ -45,7 +45,7 @@ export default function Header() {
        
        <div>
             <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
-           <p style={{margin: 20, float: 'left'}}><b>Dropent:</b> Search for an item and find the lowest price.</p>
+           <p style={{margin: 30, float: 'left'}}><b>Dropent:</b> Search for an item and find the lowest price.</p>
         <div style={{margin: 20, float: 'right'}}>
             <form className={classes.root} noValidate>
                 <CssTextField

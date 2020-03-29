@@ -1,11 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
 import Checkout from './Checkout';
 import box from '../images/box-only.png';
+import Button from '@material-ui/core/Button';
+import addItem from '../images/addItem.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'nowrap',
     transform: 'translateZ(0)',
     width: '1400px',
-    height: '250px'
+    height: '250px',
+    marginRight: '10px'
   },
   title: {
     color: theme.palette.primary.light,
@@ -35,6 +35,11 @@ const useStyles = makeStyles(theme => ({
     margin: 20,
     align:'center',
     marginTop:'-100px'
+  },
+  button: {
+    color:"C8C8C8",
+    width:'150px',
+    height:'95px',
   }
 }));
 
@@ -74,6 +79,11 @@ export default function CheckoutList() {
             {tileData.map(tile => (
                 <img src={box} alt={tile.title} style={{height:"100px", width:"150px", marginLeft:'40px', marginTop:'0px'}}/>
             ))}
+            <div style={{marginLeft:'40px'}}>
+            <Button variant="contained" className={classes.button}>
+            <img src={addItem}/>
+            </Button>
+            </div>
         </GridList>
         <div className={classes.checkout}>
             <Checkout></Checkout>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CheckoutList from './components/CheckoutList';
 import BackgroundLeaf from './components/BackgroundLeaf';
+import PriceInfo from './components/PriceInfo';
 import Header from './components/Header';
 import Rectangle from 'react-rectangle';
 
@@ -31,7 +32,8 @@ class App extends Component {
       <div style={{
         backgroundColor: '#E2EBEB'}}>
         <div style={{marginLeft:'630px', marginBottom:'-430px', marginTop:'-100px'}}>
-        <BackgroundLeaf></BackgroundLeaf>
+        {this.state.search && <PriceInfo></PriceInfo> || !this.state.search && <BackgroundLeaf></BackgroundLeaf>}
+
           </div>
           <Header style={{position: 'absolute', marginTop:'-100px'}}></Header>
         <Rectangle aspectRatio={[100, 1]} style={{marginTop:'550px'}}>

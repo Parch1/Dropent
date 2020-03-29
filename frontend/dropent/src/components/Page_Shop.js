@@ -46,8 +46,8 @@ class Shop extends Component {
             </div>
             <div tabindex="0">
               <SearchStatus userStatus={this.state.searched}></SearchStatus>
-              {this.state.searched && <PriceInfo></PriceInfo>}
-              {!this.state.searched && <BackgroundLeaf></BackgroundLeaf>}
+              {!this.state.searched && <PriceInfo></PriceInfo>}
+              {this.state.searched && <BackgroundLeaf></BackgroundLeaf>}
             </div>
 
           </Col>

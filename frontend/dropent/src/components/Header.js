@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
-import { searchStatus, setStatus, setItem } from '../Search.js';
+import { searchStatus, setStatus, setItem } from './Search.js';
 
 console.log(searchStatus);
 
@@ -74,23 +74,26 @@ export default function Header() {
     var status = setStatus();
 
    return (
-       
-       <div>
-        <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
-        <p style={{margin: 30, float: 'left'}}><b>Dropent:</b> Search for an item and find the lowest price.</p>
-        <div style={{margin: 20, float: 'right'}}>
-            <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
-                <CssTextField
-                label="Search"
-                variant="outlined"
-                id="custom-css-outlined-input"
-                className={classes.margin}
-                onChange={info.handleChange}
-            />
-            </form>
 
+       <div>
+
+        <img src={ require('../images/logo.png') } style={{float: 'left'}}></img>
+        <p style={{margin: 30, float: 'left'}}>
+          <b>Dropent:</b> Shop for your essential goods and watch the prices drop.
+        </p>
+
+        <div style={{margin: 20, float: 'right'}}>
+          <form className={classes.root} noValidate onSubmit={info.handleSubmit}>
+              <CssTextField
+              label="Search"
+              variant="outlined"
+              id="custom-css-outlined-input"
+              className={classes.margin}
+              onChange={info.handleChange}
+          />
+          </form>
         </div>
+
        </div>
    )
 }
-

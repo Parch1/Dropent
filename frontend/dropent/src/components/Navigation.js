@@ -64,3 +64,27 @@ class Navigation extends Component {
 }
 
 export default withRouter(Navigation);
+
+// From Firebase auth
+// const AuthenticatedNavigation = () => {
+//   return (
+//     <React.Fragment>
+//       <li>
+//         <Link to={routes.SIGN_OUT_PATH}>Sign Out</Link>
+//       </li>
+//     </React.Fragment>
+//   );
+// };
+//
+// const UnauthenticatedNavigation = () => {
+//   return (
+//     <React.Fragment>
+//       <li>
+//         <Link to={routes.SIGN_UP_PATH}>Sign Up</Link>
+//       </li>
+//       <li>
+//         <Link to={routes.SIGN_IN_PATH}>Sign In</Link>
+//       </li>
+//     </React.Fragment>
+//   );
+// };

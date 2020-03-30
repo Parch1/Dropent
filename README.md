@@ -5,7 +5,7 @@ Where you can watch prices drop - on all your essential goods.
 
 ## Introduction
 
-Visualize aggregate prices of high demand goods (toilet paper, hand sanitizer, etc) in graphs, webscrape online for the best prices for those goods across 40+ websites, and order goods in the app with Stripe API.
+Visualize aggregate prices of high demand goods (toilet paper, hand sanitizer, etc) in graphs, webscrape online for the best prices for those goods across 40+ websites, and order goods in the app with Stripe API. Find local charities and sign up for text and email price alerts!
 - [View it on DevPost](https://devpost.com/software/dropent-ynhwqt)
 - Read the project report [here](https://docs.google.com/document/d/1dbO4IcNlcxhiQFz-5nUSz6OwcSLitgwZEx9Ammr8EiM/edit#).
 

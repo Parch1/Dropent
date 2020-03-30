@@ -12,8 +12,11 @@ import { firebase, auth } from './firebase';
 import Navigation from './components/Navigation';
 import Shop from './components/Page_Shop';
 import Alerts from './components/Page_Alerts';
+
 import Charity from './components/Page_Charity';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Donate from './components/Page_Donate';
+
 
 const UnauthenticatedHomeContent = () => {
   return (

@@ -18,7 +18,7 @@ class PriceInfo extends Component {
     return (
       <Row className="justify-content-md-center">
         <div className="Leaf">
-              <img src={ require('../images/leaf.gif') } style={{marginTop:'40px'}}></img>
+              <img src={ require('../images/drop.gif') } style={{marginTop:'40px'}}></img>
         </div>
       </Row>
     );

@@ -7,6 +7,10 @@ import Col from 'react-bootstrap/Col';
 
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+
 
 class Alerts extends React.Component {
   state = {
@@ -44,6 +48,20 @@ class Alerts extends React.Component {
         <Row className="py-4 justify-content-md-center">
           <Col md="4">
             <h2>My Saved Items</h2>
+            <hr />
+            <p>Enter phone number for mobile SMS alerts</p>
+            <InputGroup className="mb-3">
+              <FormControl
+                placeholder="(000) 000-0000"
+                aria-label="Phone number"
+                aria-describedby="basic-addon2"
+              />
+              <InputGroup.Append>
+                <Button href="/saved" variant="outline-secondary">
+                  Go
+                </Button>
+              </InputGroup.Append>
+            </InputGroup>
           </Col>
           <Col md="8">
             <Accordion>

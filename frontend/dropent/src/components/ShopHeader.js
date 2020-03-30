@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/Button';
 
 import { setItem, searchPrice } from './Search.js';
 
+var currItem = null;
+
 const CssTextField = withStyles({
   root: {
     '& label.Mui-focused': {
@@ -45,10 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 export class HeaderInfo {
   constructor(props) {
-    this.state = {
-      searched:false,
-      item:null
-    };
+    this.state = { searched:false, item:'item'    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -65,7 +64,9 @@ export class HeaderInfo {
   handleSubmit(e){
     console.log(this.item);
     var item = searchPrice(this.item);
-    console.log(item);
+    console.log(item.toString());
+    this.state.item = item;
+    currItem = this.state.item;
   };
 
   render() {
@@ -75,9 +76,12 @@ export class HeaderInfo {
   }
 }
 
-export default function Header() {
+export default function Header(props) {
   const classes = useStyles();
-  var info = new HeaderInfo();
+  var info = new HeaderInfo(props.item);
+  currItem = info.state.item;
+  Object.assign({item: info.state.item});
+  //props.item = info.state.item;
   // var status = setStatus();
 
   return (

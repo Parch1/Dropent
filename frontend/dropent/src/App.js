@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Shop from './components/Page_Shop';
 import Alerts from './components/Page_Alerts';
-import Charity from './components/Page_Charity';
+import Donate from './components/Page_Donate';
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/" component={Shop}/>
             <Route exact path="/shop" component={Shop}/>
             <Route exact path="/saved" component={Alerts}/>
-            <Route exact path="/donate" component={Charity}/>
+            <Route exact path="/donate" component={Donate}/>
           </Switch>
         </div>
       </Router>

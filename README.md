@@ -1,3 +1,5 @@
+![Logo](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/995/853/datas/gallery.jpg)
+
 # Dropent
 Where you can watch prices drop - on all your essential goods.
 

@@ -12,6 +12,7 @@ import PriceChart from './PriceChart';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav'
 
 
 const useStyles = makeStyles(theme => ({
@@ -66,15 +67,20 @@ export default function CheckoutList() {
 
   return (
     <Row style={{backgroundColor: '#F2F3F4'}}>
-      <Col sm="8" className="pt-4">
+      <Col sm="10" md="7" className="pt-4">
         <PriceChart/>
       </Col>
 
-      <Col sm="4">
+      <Col sm="2" md="5">
         <h4 style={{marginTop:'20px'}}>Today's Price</h4>
         <hr />
         <h5>Bread</h5>
-        <h5>$3.99/loaf</h5>
+        <Nav.Link href="#">Amazon - $3.99/loaf</Nav.Link>
+        <Nav.Link href="#">Giant - $4.99/loaf</Nav.Link>
+        <Nav.Link href="#"><b>Walmart - $2.99/loaf</b></Nav.Link>
+        <Nav.Link href="#">Shoppers - $3.99/loaf</Nav.Link>
+        <hr />
+
         <div className={classes.checkout}>
             <Checkout></Checkout>
         </div>

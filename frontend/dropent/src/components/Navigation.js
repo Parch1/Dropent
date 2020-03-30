@@ -8,7 +8,7 @@ class Navigation extends Component {
     super(props);
 
     this.state = {
-      name: "Ryan",
+      name: "Jennifer",
     };
   }
 

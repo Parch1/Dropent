@@ -5,6 +5,8 @@ import Checkout from './Checkout';
 import box from '../images/box-only.png';
 import Button from '@material-ui/core/Button';
 import addItem from '../images/addItem.png';
+import PriceChart from './PriceChart';
+
 
 // For Layout
 import Container from 'react-bootstrap/Container';
@@ -64,27 +66,31 @@ export default function CheckoutList() {
 
   return (
     <Row style={{backgroundColor: '#F2F3F4'}}>
+      <Col sm="8" className="pt-4">
+        <PriceChart/>
+      </Col>
 
-      <Col sm="2">
-        <h4 style={{marginTop:'20px'}}>Items saved</h4>
+      <Col sm="4">
+        <h4 style={{marginTop:'20px'}}>Today's Price</h4>
+        <hr />
+        <h5>Bread</h5>
+        <h5>$3.99/loaf</h5>
         <div className={classes.checkout}>
             <Checkout></Checkout>
         </div>
       </Col>
 
-      <Col sm="10" className="pt-4">
-        <GridList className={classes.gridList} cols={2}>
-            {tileData.map(tile => (
-                <img src={box} alt={tile.title} style={{height:"100px", width:"150px", marginLeft:'40px', marginTop:'0px'}}/>
-            ))}
-            <div style={{marginLeft:'40px'}}>
-              <Button variant="contained" className={classes.button}>
-                <img src={addItem}/>
-              </Button>
-            </div>
-        </GridList>
-      </Col>
-
     </Row>
   );
 }
+
+// <GridList className={classes.gridList} cols={2}>
+//     {tileData.map(tile => (
+//         <img src={box} alt={tile.title} style={{height:"100px", width:"150px", marginLeft:'40px', marginTop:'0px'}}/>
+//     ))}
+//     <div style={{marginLeft:'40px'}}>
+//       <Button variant="contained" className={classes.button}>
+//         <img src={addItem}/>
+//       </Button>
+//     </div>
+// </GridList>

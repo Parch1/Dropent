@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import PriceChart from './PriceChart';
-
 import Row from 'react-bootstrap/Row';
 
 class PriceInfo extends Component {
@@ -22,7 +20,6 @@ class PriceInfo extends Component {
         <div className="Leaf">
             <img src={ require('../images/drop.gif') } style={{marginTop:'40px'}}></img>
         </div>
-        <PriceChart/>
       </Row>
     );
   }

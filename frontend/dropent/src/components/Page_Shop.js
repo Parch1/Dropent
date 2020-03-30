@@ -5,6 +5,7 @@ import PriceInfo from './PriceInfo';
 import ShopHeader from './ShopHeader';
 import Rectangle from 'react-rectangle';
 
+
 // For Layout
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,6 +13,7 @@ import Col from 'react-bootstrap/Col';
 
 import SearchStatus from './SearchStatus';
 import searchStatus from './Search';
+
 
 console.log(searchStatus);
 

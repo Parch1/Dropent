@@ -147,16 +147,6 @@ class App extends Component {
       <AuthProvider>
         <Router>
           <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">
-                React{' '}
-                <span role="img" aria-label="purple heart">
-                  💜
-                </span>{' '}
-                Firebase
-              </h1>
-            </header>
             <Navigation />
 			<div style={{backgroundColor: '#E2EBEB'}}>
             <Switch>

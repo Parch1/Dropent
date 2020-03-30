@@ -42,7 +42,6 @@ class Shop extends Component {
       <Container>
         <Row className="justify-content-md-center">
           <Col>
-          <p>{this.state.query} test</p>
             <div onClick={this.handleChange}>
               <ShopHeader item={this.state.query}></ShopHeader>
             </div>
